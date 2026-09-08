@@ -1,5 +1,12 @@
 // JavaScript Comment Format
 
-const userName = "Steve";
+const http = require("http");
 
-console.log(userName);
+function handleRequest(request, response) {
+  response.statusCode = 200;
+  response.end("<h1>Hello World! - from my server!</h1>");
+}
+
+const server = http.createServer(handleRequest);
+
+server.listen(3000);
