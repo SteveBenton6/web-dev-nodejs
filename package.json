@@ -1,0 +1,23 @@
+{
+  "name": "web-development-nodejs-express",
+  "version": "1.0.0",
+  "description": "Getting started with NodeJS & Express",
+  "homepage": "https://github.com/SteveBenton6/web-dev-nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/SteveBenton6/web-dev-nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveBenton6/web-dev-nodejs.git"
+  },
+  "license": "ISC",
+  "author": "Steve B",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
