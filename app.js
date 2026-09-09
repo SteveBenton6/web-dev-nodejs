@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const express = require("express");
+const { url } = require("inspector");
 
 const app = express();
 
@@ -28,6 +29,19 @@ app.post("/store-user", function (req, res) {
   fs.writeFileSync(filePath, JSON.stringify(existingUsers));
 
   res.send("<h2>Username stored!</h2>");
+});
+
+app.get("/users", function (req, res) {
+  const filePath = path.join(__dirname, "data", "users.json");
+  const fileData = fs.readFileSync(filePath);
+  const existingUsers = JSON.parse(fileData);
+
+  let responseData = "<ul>";
+  for (const user of existingUsers) {
+    responseData += "<li>" + user + "</li>";
+  }
+  responseData += "</ul>";
+  res.send(responseData);
 });
 
 app.listen(3000);
