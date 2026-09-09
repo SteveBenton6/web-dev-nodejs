@@ -1,4 +1,6 @@
 // JavaScript Comment Format
+const fs = require("fs");
+const path = require("path");
 
 const express = require("express");
 
@@ -18,7 +20,13 @@ app.get("/", function (req, res) {
 
 app.post("/store-user", function (req, res) {
   const userName = req.body.username;
-  console.log(userName);
+
+  const filePath = path.join(__dirname, "data", "users.json");
+  const fileData = fs.readFileSync(filePath);
+  const existingUsers = JSON.parse(fileData);
+  existingUsers.push(userName);
+  fs.writeFileSync(filePath, JSON.stringify(existingUsers));
+
   res.send("<h2>Username stored!</h2>");
 });
 
