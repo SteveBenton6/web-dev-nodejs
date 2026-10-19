@@ -44,4 +44,8 @@ app.get("/users", function (req, res) {
   res.send(responseData);
 });
 
+app.get("/store-user", function (req, res) {
+  res.send("<h2>Name Submitted - please go to /users to seel full list.</h2>");
+});
+
 app.listen(3000);
