@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 
 const express = require("express");
-const { url } = require("inspector");
 
 const app = express();
 
